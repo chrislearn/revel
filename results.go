@@ -320,11 +320,11 @@ type BinaryResult struct {
 }
 
 func (r *BinaryResult) Apply(req *Request, resp *Response) {
-	disposition := string(r.Delivery)
-	if r.Name != "" {
-		disposition += fmt.Sprintf(`; filename="%s"`, r.Name)
-	}
-	resp.Out.Header().Set("Content-Disposition", disposition)
+//	disposition := string(r.Delivery)
+//	if r.Name != "" {
+//		disposition += fmt.Sprintf(`; filename="%s"`, r.Name)
+//	}
+//	resp.Out.Header().Set("Content-Disposition", disposition)
 
 	// If we have a ReadSeeker, delegate to http.ServeContent
 	if rs, ok := r.Reader.(io.ReadSeeker); ok {
